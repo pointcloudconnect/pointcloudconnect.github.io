@@ -54,6 +54,3 @@ Please follow the existing code style and formatting conventions used in the pro
 
 By contributing to Point Cloud Connect, you agree that your contributions will be licensed under the [MIT License](LICENSE).
 
----
-
-Feel free to customize this template further if needed to align with your project's specific guidelines and conventions. Providing clear instructions and guidelines for contributors helps streamline the contribution process and fosters a collaborative community around your project.
