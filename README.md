@@ -1,8 +1,5 @@
 # pointcloudconnect.github.io
 
-Certainly! Writing a README.md file for your project is crucial as it serves as a guide for users and developers who come across your project. Here's a template you can use for your project:
-
----
 
 # Researcher Tracker
 
