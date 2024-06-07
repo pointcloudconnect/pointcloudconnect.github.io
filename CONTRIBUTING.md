@@ -1,7 +1,3 @@
-Got it! Here's the updated `CONTRIBUTING.md` template with the project name "Point Cloud Connect":
-
----
-
 # Contributing to Point Cloud Connect
 
 Thank you for your interest in contributing to Point Cloud Connect! We welcome contributions from everyone, regardless of your level of experience. By contributing to this project, you agree to abide by the [Code of Conduct](CODE_OF_CONDUCT.md).
