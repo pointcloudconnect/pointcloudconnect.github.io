@@ -1,16 +1,12 @@
-const researchers = [
-    {
-        "name": "Dr. Alice Smith",
-        "affiliation": "Tech University",
-        "profile": "https://techuniversity.edu/alicesmith",
-        "publications": [
-            { "title": "Point Cloud Segmentation", "link": "https://example.com/point-cloud-segmentation" }
-        ],
-        "social": { "twitter": "https://twitter.com/alicesmith", "linkedin": "https://linkedin.com/in/alicesmith" }
-    },
-    // More researcher data
-];
+// Fetch researcher data from JSON file
+fetch('researchers.json')
+    .then(response => response.json())
+    .then(data => {
+        displayResearchers(data); // Pass the fetched data to the displayResearchers function
+    })
+    .catch(error => console.error('Error fetching data:', error));
 
+// Function to display researchers
 function displayResearchers(data) {
     let output = '';
     data.forEach(researcher => {
@@ -26,10 +22,14 @@ function displayResearchers(data) {
     document.getElementById('researcher-list').innerHTML = output;
 }
 
-displayResearchers(researchers);
-
+// Add event listener to search input
 document.getElementById('search-input').addEventListener('input', function () {
     const input = this.value.toLowerCase();
-    const filtered = researchers.filter(researcher => researcher.name.toLowerCase().includes(input));
-    displayResearchers(filtered);
+    fetch('researchers.json')
+        .then(response => response.json())
+        .then(data => {
+            const filtered = data.filter(researcher => researcher.name.toLowerCase().includes(input));
+            displayResearchers(filtered);
+        })
+        .catch(error => console.error('Error fetching data:', error));
 });
