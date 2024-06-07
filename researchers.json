@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Dr. Alice Smith",
+        "affiliation": "Tech University",
+        "profile": "https://techuniversity.edu/alicesmith",
+        "publications": [
+            { "title": "Point Cloud Segmentation", "link": "https://example.com/point-cloud-segmentation" }
+        ],
+        "social": { "twitter": "https://twitter.com/alicesmith", "linkedin": "https://linkedin.com/in/alicesmith" }
+    },
+    {
+        "name": "Dr. Bob Johnson",
+        "affiliation": "Data Institute",
+        "profile": "https://datainstitute.edu/bobjohnson",
+        "publications": [
+            { "title": "Advanced Data Analytics", "link": "https://example.com/advanced-data-analytics" }
+        ],
+        "social": { "twitter": "https://twitter.com/bobjohnson", "linkedin": "https://linkedin.com/in/bobjohnson" }
+    }
+]
