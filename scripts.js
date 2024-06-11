@@ -17,11 +17,11 @@ document.getElementById('researcher-form').addEventListener('submit', function (
     };
 
     // Send the new researcher data to the GitHub Actions endpoint
-    fetch('https://api.github.com/repos/your-username/point-cloud-connect/actions/workflows/add-researcher.yml/dispatches', {
+    fetch('https://api.github.com/repos/pointcloudconnet/pointcloudconnect.github.io/dispatches', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `token ${your_github_token}`
+            'Authorization': `token your_github_token`
         },
         body: JSON.stringify({
             event_type: 'add-researcher',
@@ -33,12 +33,12 @@ document.getElementById('researcher-form').addEventListener('submit', function (
             alert('Submission received. Please wait for approval.');
             document.getElementById('researcher-form').reset();
         } else {
-            alert('There was a problem submitting your information.');
+            alert('There was a problem submitting your information. Please try again later.');
             console.error('Error:', response.statusText);
         }
     })
     .catch(error => {
-        alert('There was a problem submitting your information.');
+        alert('There was a problem submitting your information. Please try again later.');
         console.error('Error:', error);
     });
 });
