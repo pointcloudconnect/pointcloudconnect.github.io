@@ -18,7 +18,31 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Form validation
+    // Fetch and display researcher information
+    fetch('researchers.json')
+        .then(response => response.json())
+        .then(data => {
+            const researchersList = document.getElementById('researchersList');
+            
+            data.forEach(researcher => {
+                const researcherDiv = document.createElement('div');
+                researcherDiv.classList.add('researcher');
+
+                researcherDiv.innerHTML = `
+                    <h3>${researcher.name}</h3>
+                    <p><strong>Email:</strong> ${researcher.email}</p>
+                    <p><strong>Affiliation:</strong> ${researcher.affiliation}</p>
+                    <p><strong>Publication:</strong> ${researcher.publication}</p>
+                `;
+
+                researchersList.appendChild(researcherDiv);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching researcher data:', error);
+        });
+
+    // Form validation and submission
     const form = document.getElementById('researcherForm');
 
     form.addEventListener('submit', function(event) {
@@ -55,8 +79,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function submitForm(name, email, affiliation, publication) {
-        // Simulate form submission
-        alert('Form submitted successfully!');
-        // You can perform actual form submission here using AJAX or fetch API
+        // Create a JSON object with the researcher details
+        const researcher = {
+            name: name,
+            email: email,
+            affiliation: affiliation,
+            publication: publication
+        };
+
+        // Simulate form submission (optional)
+        alert('Form submitted successfully! Researcher details saved.');
+
+        // You can add additional logic here if needed
     }
 });
