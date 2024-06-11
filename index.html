@@ -13,7 +13,26 @@
     </header>
     <main>
         <div id="researcher-list"></div>
+
+        <!-- Submission Form for new researchers -->
+        <section>
+            <h2>Submit Your Researcher Information</h2>
+            <form id="researcher-form">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="text" id="affiliation" placeholder="Affiliation" required>
+                <input type="url" id="profile" placeholder="Profile URL" required>
+                <textarea id="publications" placeholder="Publications (Title|Link, Title|Link)" required></textarea>
+                <input type="url" id="social-twitter" placeholder="Twitter URL">
+                <input type="url" id="social-linkedin" placeholder="LinkedIn URL">
+                <button type="submit">Submit</button>
+            </form>
+        </section>
     </main>
+
+    <!-- Firebase and Main Script -->
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
