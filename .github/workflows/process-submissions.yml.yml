@@ -1,0 +1,36 @@
+name: Process Submissions
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  process-submission:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Extract submission
+      id: extract
+      run: |
+        echo "::set-output name=issue_number::${{ github.event.issue.number }}"
+        echo "::set-output name=issue_body::${{ github.event.issue.body }}"
+
+    - name: Format JSON
+      id: format
+      run: |
+        echo '${{ steps.extract.outputs.issue_body }}' | jq '.' > new_submission.json
+
+    - name: Add submission to data file
+      run: |
+        jq --slurpfile new new_submission.json '.researchers += $new' researchers.json > updated_researchers.json
+        mv updated_researchers.json researchers.json
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        title: 'Add new researcher from issue #${{ steps.extract.outputs.issue_number }}'
+        body: 'This pull request adds a new researcher based on the details provided in issue #${{ steps.extract.outputs.issue_number }}'
+        commit-message: 'Add new researcher from issue #${{ steps.extract.outputs.issue_number }}'
