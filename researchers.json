@@ -1,12 +1,12 @@
 [
     {
-        "name": "Dr. Alice Smith",
-        "affiliation": "Tech University",
-        "profile": "https://techuniversity.edu/alicesmith",
+        "name": "Kamyar Othman Hamad",
+        "affiliation": "CSU",
+        "profile": "https://kamyarothmanhamad.github.io/",
         "publications": [
-            { "title": "Point Cloud Segmentation", "link": "https://example.com/point-cloud-segmentation" }
+            { "title": "", "link": "" }
         ],
-        "social": { "twitter": "https://twitter.com/alicesmith", "linkedin": "https://linkedin.com/in/alicesmith" }
+        "social": { "twitter": "https://twitter.com/", "linkedin": "https://linkedin.com/in/kamyarothmanhamad" }
     },
     {
         "name": "Dr. Bob Johnson",
