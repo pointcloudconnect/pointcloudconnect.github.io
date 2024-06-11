@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PointCloudConnect</title>
+    <title>PointCloudConnect - Point Cloud Processing Platform</title>
+    <meta name="description" content="PointCloudConnect is a web platform designed for researchers in the field of point cloud processing. It allows users to browse and connect with other researchers, view their profiles and publications, and follow their updates.">
+    <meta name="keywords" content="point cloud, processing, research, platform, collaboration">
     <!-- Add any necessary stylesheets or scripts here -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -18,37 +21,42 @@
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About PointCloudConnect</h2>
-        <p>"PointCloudConnect" is a web platform designed for researchers in the field of point cloud processing...</p>
-    </section>
+    <main>
+        <section id="about">
+            <h2>About PointCloudConnect</h2>
+            <p>"PointCloudConnect" is a web platform designed for researchers in the field of point cloud processing. It allows users to browse and connect with other researchers, view their profiles and publications, and follow their updates.</p>
+        </section>
 
-    <section id="researchers">
-        <h2>Researchers</h2>
-        <!-- Display researchers' profiles and publications here -->
-    </section>
+        <section id="researchers">
+            <h2>Researchers</h2>
+            <!-- Display researchers' profiles and publications here -->
+        </section>
 
-    <section id="submit">
-        <h2>Submit Researcher Information</h2>
-        <form action="submit-researcher-info" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
+        <section id="submit">
+            <h2>Submit Researcher Information</h2>
+            <form action="submit-researcher-info" method="post" id="researcherForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
 
-            <label for="affiliation">Affiliation:</label>
-            <input type="text" id="affiliation" name="affiliation"><br>
+                <label for="affiliation">Affiliation:</label>
+                <input type="text" id="affiliation" name="affiliation"><br>
 
-            <label for="publication">Publication:</label>
-            <textarea id="publication" name="publication"></textarea><br>
+                <label for="publication">Publication:</label>
+                <textarea id="publication" name="publication"></textarea><br>
 
-            <input type="submit" value="Submit">
-        </form>
-    </section>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 PointCloudConnect. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript for form validation -->
+    <script src="form-validation.js"></script>
 </body>
 </html>
