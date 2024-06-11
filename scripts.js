@@ -1,35 +1,44 @@
-// Fetch researcher data from JSON file
-fetch('researchers.json')
-    .then(response => response.json())
-    .then(data => {
-        displayResearchers(data); // Pass the fetched data to the displayResearchers function
-    })
-    .catch(error => console.error('Error fetching data:', error));
+// Handle form submission
+document.getElementById('researcher-form').addEventListener('submit', function (event) {
+    event.preventDefault();
 
-// Function to display researchers
-function displayResearchers(data) {
-    let output = '';
-    data.forEach(researcher => {
-        output += `<div class="researcher">
-            <h2>${researcher.name}</h2>
-            <p>Affiliation: ${researcher.affiliation}</p>
-            <p><a href="${researcher.profile}">Profile</a></p>
-            <p>Publications:</p>
-            <ul>${researcher.publications.map(pub => `<li><a href="${pub.link}">${pub.title}</a></li>`).join('')}</ul>
-            <p>Social Media: <a href="${researcher.social.twitter}">Twitter</a> | <a href="${researcher.social.linkedin}">LinkedIn</a></p>
-        </div>`;
-    });
-    document.getElementById('researcher-list').innerHTML = output;
-}
+    const newResearcher = {
+        name: document.getElementById('name').value,
+        affiliation: document.getElementById('affiliation').value,
+        profile: document.getElementById('profile').value,
+        publications: document.getElementById('publications').value.split(',').map(pub => {
+            const [title, link] = pub.split('|').map(item => item.trim());
+            return { title, link };
+        }),
+        social: {
+            twitter: document.getElementById('social-twitter').value,
+            linkedin: document.getElementById('social-linkedin').value
+        }
+    };
 
-// Add event listener to search input
-document.getElementById('search-input').addEventListener('input', function () {
-    const input = this.value.toLowerCase();
-    fetch('researchers.json')
-        .then(response => response.json())
-        .then(data => {
-            const filtered = data.filter(researcher => researcher.name.toLowerCase().includes(input));
-            displayResearchers(filtered);
+    // Send the new researcher data to the GitHub Actions endpoint
+    fetch('https://api.github.com/repos/your-username/point-cloud-connect/actions/workflows/add-researcher.yml/dispatches', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `token ${your_github_token}`
+        },
+        body: JSON.stringify({
+            event_type: 'add-researcher',
+            client_payload: newResearcher
         })
-        .catch(error => console.error('Error fetching data:', error));
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Submission received. Please wait for approval.');
+            document.getElementById('researcher-form').reset();
+        } else {
+            alert('There was a problem submitting your information.');
+            console.error('Error:', response.statusText);
+        }
+    })
+    .catch(error => {
+        alert('There was a problem submitting your information.');
+        console.error('Error:', error);
+    });
 });
