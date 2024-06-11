@@ -12,18 +12,38 @@
         <input type="text" id="search-input" placeholder="Search researchers...">
     </header>
     <main>
-        <div id="researcher-list"></div>
+        <div id="researcher-list">
+            <!-- Researchers will be dynamically added here -->
+        </div>
 
         <!-- Submission Form for new researchers -->
         <section>
             <h2>Submit Your Researcher Information</h2>
             <form id="researcher-form">
-                <input type="text" id="name" placeholder="Name" required>
-                <input type="text" id="affiliation" placeholder="Affiliation" required>
-                <input type="url" id="profile" placeholder="Profile URL" required>
-                <textarea id="publications" placeholder="Publications (Title|Link, Title|Link)" required></textarea>
-                <input type="url" id="social-twitter" placeholder="Twitter URL">
-                <input type="url" id="social-linkedin" placeholder="LinkedIn URL">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="affiliation">Affiliation:</label>
+                    <input type="text" id="affiliation" placeholder="Enter your affiliation" required>
+                </div>
+                <div class="form-group">
+                    <label for="profile">Profile URL:</label>
+                    <input type="url" id="profile" placeholder="Enter your profile URL" required>
+                </div>
+                <div class="form-group">
+                    <label for="publications">Publications:</label>
+                    <textarea id="publications" placeholder="Enter your publications (Title|Link, Title|Link)" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="social-twitter">Twitter URL:</label>
+                    <input type="url" id="social-twitter" placeholder="Enter your Twitter URL">
+                </div>
+                <div class="form-group">
+                    <label for="social-linkedin">LinkedIn URL:</label>
+                    <input type="url" id="social-linkedin" placeholder="Enter your LinkedIn URL">
+                </div>
                 <button type="submit">Submit</button>
             </form>
         </section>
