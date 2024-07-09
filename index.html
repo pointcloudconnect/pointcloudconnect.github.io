@@ -6,6 +6,11 @@
   <title>PointCloudConnect - Point Cloud Processing Platform</title>
   <meta name="description" content="PointCloudConnect is a web platform designed for researchers in the field of point cloud processing.">
   <meta name="keywords" content="point cloud, processing, research, platform, collaboration">
+  <meta property="og:title" content="PointCloudConnect - Point Cloud Processing Platform">
+  <meta property="og:description" content="PointCloudConnect is a web platform designed for researchers in the field of point cloud processing.">
+  <meta property="og:image" content="path/to/your/image.jpg">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,11 +33,22 @@
     <section id="researchers">
       <h2>Researchers</h2>
       <div id="researchersList"></div>
+      <div id="loadingIndicator" style="display: none;">Loading...</div>
     </section>
 
+    <section id="feedback">
+      <h2>Feedback</h2>
+      <form action="submit-feedback" method="post">
+        <label for="feedback">Your Feedback:</label>
+        <textarea id="feedback" name="feedback" required></textarea><br>
+        <input type="submit" value="Submit">
+      </form>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2024 PointCloudConnect. All rights reserved.</p>
+    <p>Contact us at <a href="mailto:support@pointcloudconnect.com">support@pointcloudconnect.com</a></p>
   </footer>
 
   <script src="scripts.js"></script>
