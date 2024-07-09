@@ -15,7 +15,6 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#researchers">Researchers</a></li>
-        <li><a href="#submit">Submit Researcher Info</a></li>
       </ul>
     </nav>
   </header>
@@ -31,35 +30,6 @@
       <div id="researchersList"></div>
     </section>
 
-    <section id="submit">
-      <h2>Submit Researcher Information</h2>
-      <form action="submit-researcher-info" method="post" id="researcherForm">
-        <div>
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div>
-          <label for="affiliation">Affiliation:</label>
-          <input type="text" id="affiliation" name="affiliation">
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-          <label for="website">Website Address (Optional):</label>
-          <input type="url" id="website" name="website">
-        </div>
-        <div>
-          <label for="expertise">Add Expertise Labels (Separate by commas):</label>
-          <input type="text" id="expertise" name="expertise" placeholder="e.g., 3D Reconstruction, Object Detection">
-        </div>
-        <div>
-          <input type="submit" value="Submit">
-        </div>
-      </form>
-    </section>
-  </main>
 
   <footer>
     <p>&copy; 2024 PointCloudConnect. All rights reserved.</p>
