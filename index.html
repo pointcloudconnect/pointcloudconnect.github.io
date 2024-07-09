@@ -11,56 +11,87 @@
   <meta property="og:image" content="path/to/your/image.jpg">
   <meta property="og:url" content="https://yourwebsite.com">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- Optional: You can include styles if needed -->
+  <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
-  <header>
-    <h1>PointCloudConnect</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#researchers">Researchers</a></li>
-      </ul>
-    </nav>
-  </header>
+  <center>
+    <header>
+      <h1>PointCloudConnect</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#researchers">Researchers</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <section id="about">
-      <h2>About PointCloudConnect</h2>
-      <p>PointCloudConnect is a web platform designed for researchers in the field of point cloud processing. It allows users to browse and connect with other researchers, view their profiles and publications, and follow their updates.</p>
-    </section>
+    <main>
+      <section id="about">
+        <h2>About PointCloudConnect</h2>
+        <p>PointCloudConnect is a web platform designed for researchers in the field of point cloud processing. It allows users to browse and connect with other researchers, view their profiles and publications, and follow their updates.</p>
+      </section>
 
-    <section id="search">
-      <h2>Search and Sort</h2>
-      <input type="text" id="searchBar" placeholder="Search by name, affiliation, labels, or country">
-      <select id="sortOptions">
-        <option value="name">Sort by Name</option>
-        <option value="affiliation">Sort by Affiliation</option>
-        <option value="country">Sort by Country</option>
-      </select>
-    </section>
+      <section id="search">
+        <h2>Search and Sort</h2>
+        <input type="text" id="searchBar" placeholder="Search by name, affiliation, labels, or country">
+        <select id="sortOptions">
+          <option value="name">Sort by Name</option>
+          <option value="affiliation">Sort by Affiliation</option>
+          <option value="country">Sort by Country</option>
+        </select>
+      </section>
 
-    <section id="researchers">
-      <h2>Researchers</h2>
-      <div id="researchersList"></div>
-      <div id="loadingIndicator" style="display: none;">Loading...</div>
-    </section>
+      <section id="researchers">
+        <h2>Researchers</h2>
+        <div id="researchersList"></div>
+        <div id="loadingIndicator" style="display: none;">Loading...</div>
+      </section>
 
-    <section id="feedback">
-      <h2>Feedback</h2>
-      <form action="submit-feedback" method="post">
-        <label for="feedback">Your Feedback:</label>
-        <textarea id="feedback" name="feedback" required></textarea><br>
-        <input type="submit" value="Submit">
-      </form>
-    </section>
-  </main>
+      <section id="feedback">
+        <h2>Feedback</h2>
+        <form action="submit-feedback" method="post">
+          <label for="feedback">Your Feedback:</label>
+          <textarea id="feedback" name="feedback" required></textarea><br>
+          <input type="submit" value="Submit">
+        </form>
+      </section>
+    </main>
 
-  <footer>
-    <p>&copy; 2024 PointCloudConnect. All rights reserved.</p>
-    <p>Contact us at <a href="mailto:support@pointcloudconnect.com">support@pointcloudconnect.com</a></p>
-  </footer>
+    <footer>
+      <p>&copy; 2024 PointCloudConnect. All rights reserved.</p>
+      <p>Contact us at <a href="mailto:support@pointcloudconnect.com">support@pointcloudconnect.com</a></p>
+    </footer>
+  </center>
 
-  <script src="scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Fetch the JSON data
+      fetch('researchers.json')
+        .then(response => response.json())
+        .then(data => {
+          const researchersList = document.getElementById('researchersList');
+
+          // Iterate through each researcher and create HTML content
+          data.forEach(researcher => {
+            const researcherDiv = document.createElement('div');
+            researcherDiv.classList.add('researcher');
+
+            researcherDiv.innerHTML = `
+              <h3>${researcher.name}</h3>
+              <p><strong>Affiliation:</strong> ${researcher.affiliation}</p>
+              <p><strong>Country:</strong> ${researcher.country}</p>
+              <hr>
+            `;
+
+            researchersList.appendChild(researcherDiv);
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching JSON:', error);
+        });
+    });
+  </script>
 </body>
 </html>
