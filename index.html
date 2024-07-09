@@ -23,7 +23,7 @@
   <main>
     <section id="about">
       <h2>About PointCloudConnect</h2>
-      <p>"PointCloudConnect" is a web platform designed for researchers in the field of point cloud processing. It allows users to browse and connect with other researchers, view their profiles and publications, and follow their updates.</p>
+      <p>PointCloudConnect is a web platform designed for researchers in the field of point cloud processing. It allows users to browse and connect with other researchers, view their profiles and publications, and follow their updates.</p>
     </section>
 
     <section id="researchers">
@@ -34,22 +34,29 @@
     <section id="submit">
       <h2>Submit Researcher Information</h2>
       <form action="submit-researcher-info" method="post" id="researcherForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
-
-        <label for="affiliation">Affiliation:</label>
-        <input type="text" id="affiliation" name="affiliation"><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
-
-        <label for="website">Website Address (Optional):</label>
-        <input type="url" id="website" name="website"><br>
-
-        <label for="expertise">Add Expertise Labels (Separate by commas):</label>
-        <input type="text" id="expertise" name="expertise" placeholder="e.g., 3D Reconstruction, Object Detection"><br>
-
-        <input type="submit" value="Submit">
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="affiliation">Affiliation:</label>
+          <input type="text" id="affiliation" name="affiliation">
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="website">Website Address (Optional):</label>
+          <input type="url" id="website" name="website">
+        </div>
+        <div>
+          <label for="expertise">Add Expertise Labels (Separate by commas):</label>
+          <input type="text" id="expertise" name="expertise" placeholder="e.g., 3D Reconstruction, Object Detection">
+        </div>
+        <div>
+          <input type="submit" value="Submit">
+        </div>
       </form>
     </section>
   </main>
