@@ -2,12 +2,14 @@
   {
     "name": "John Doe",
     "affiliation": "University of Example",
-    "country": "United States"
+    "country": "United States",
+    "website": "https://www.example.com/johndoe"
   },
   {
     "name": "Jane Smith",
     "affiliation": "Research Institute of Testing",
-    "country": "Canada"
+    "country": "Canada",
+    "website": "https://www.testinginstitute.com/janesmith"
   }
   // Add more researcher objects as needed
 ]
