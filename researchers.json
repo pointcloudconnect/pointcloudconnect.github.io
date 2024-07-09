@@ -1,20 +1,7 @@
 [
-    {
-        "name": "Kamyar Othman Hamad",
-        "affiliation": "CSU",
-        "profile": "https://kamyarothmanhamad.github.io/",
-        "publications": [
-            { "title": "", "link": "" }
-        ],
-        "social": { "twitter": "https://twitter.com/", "linkedin": "https://linkedin.com/in/kamyarothmanhamad" }
-    },
-    {
-        "name": "Dr. Bob Johnson",
-        "affiliation": "Data Institute",
-        "profile": "https://datainstitute.edu/bobjohnson",
-        "publications": [
-            { "title": "Advanced Data Analytics", "link": "https://example.com/advanced-data-analytics" }
-        ],
-        "social": { "twitter": "https://twitter.com/bobjohnson", "linkedin": "https://linkedin.com/in/bobjohnson" }
-    }
+  { "name": "Dr. Alice Johnson", "affiliation": "University A", "email": "alice@example.com", "website": "http://alice.example.com", "labels": ["3D Reconstruction"], "country": "USA" },
+  { "name": "Dr. Bob Smith", "affiliation": "Institute B", "email": "bob@example.com", "website": "http://bob.example.com", "labels": ["Object Detection"], "country": "UK" },
+  { "name": "Dr. Charlie Brown", "affiliation": "University C", "email": "charlie@example.com", "website": "http://charlie.example.com", "labels": ["Data Visualization"], "country": "Canada" },
+  { "name": "Dr. Dana White", "affiliation": "Research Lab D", "email": "dana@example.com", "website": "http://dana.example.com", "labels": ["Machine Learning"], "country": "Germany" },
+  { "name": "Dr. Eva Green", "affiliation": "Institute E", "email": "eva@example.com", "website": "http://eva.example.com", "labels": ["Computer Vision"], "country": "France" }
 ]
