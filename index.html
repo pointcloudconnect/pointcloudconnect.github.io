@@ -11,9 +11,6 @@
   <meta property="og:image" content="path/to/your/image.jpg">
   <meta property="og:url" content="https://yourwebsite.com">
   <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Optional: You can include styles if needed -->
-  <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 <body>
   <center>
@@ -73,19 +70,50 @@
         .then(data => {
           const researchersList = document.getElementById('researchersList');
 
-          // Iterate through each researcher and create HTML content
-          data.forEach(researcher => {
-            const researcherDiv = document.createElement('div');
-            researcherDiv.classList.add('researcher');
+          // Function to filter researchers based on search input
+          function filterResearchers(searchTerm) {
+            const filteredResearchers = data.filter(researcher => {
+              // Modify conditions based on your search requirements
+              return (
+                researcher.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                researcher.affiliation.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                researcher.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                researcher.website.toLowerCase().includes(searchTerm.toLowerCase()) // Include website in search
+              );
+            });
 
-            researcherDiv.innerHTML = `
-              <h3>${researcher.name}</h3>
-              <p><strong>Affiliation:</strong> ${researcher.affiliation}</p>
-              <p><strong>Country:</strong> ${researcher.country}</p>
-              <hr>
-            `;
+            // Update UI with filtered results
+            displayResearchers(filteredResearchers);
+          }
 
-            researchersList.appendChild(researcherDiv);
+          // Function to display researchers
+          function displayResearchers(researchers) {
+            researchersList.innerHTML = '';
+
+            researchers.forEach(researcher => {
+              const researcherDiv = document.createElement('div');
+              researcherDiv.classList.add('researcher');
+
+              researcherDiv.innerHTML = `
+                <h3>${researcher.name}</h3>
+                <p><strong>Affiliation:</strong> ${researcher.affiliation}</p>
+                <p><strong>Country:</strong> ${researcher.country}</p>
+                <p><strong>Website:</strong> <a href="${researcher.website}" target="_blank">${researcher.website}</a></p>
+                <hr>
+              `;
+
+              researchersList.appendChild(researcherDiv);
+            });
+          }
+
+          // Initial display of all researchers
+          displayResearchers(data);
+
+          // Event listener for search input
+          const searchBar = document.getElementById('searchBar');
+          searchBar.addEventListener('input', function(event) {
+            const searchTerm = event.target.value.trim();
+            filterResearchers(searchTerm);
           });
         })
         .catch(error => {
