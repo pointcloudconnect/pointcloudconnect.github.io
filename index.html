@@ -46,14 +46,8 @@
         <label for="website">Website Address (Optional):</label>
         <input type="url" id="website" name="website"><br>
 
-        <label for="expertise">Expertise (Multi-Select - Optional):</label>
-        <select id="expertise" name="expertise[]" multiple>
-          <option value="3D Reconstruction">3D Reconstruction</option>
-          <option value="Object Detection">Object Detection</option>
-          <option value="Segmentation">Segmentation</option>
-          <option value="Registration">Registration</option>
-          <option value="Other">Other</option>
-        </select><br>
+        <label for="expertise">Add Expertise Labels (Separate by commas):</label>
+        <input type="text" id="expertise" name="expertise" placeholder="e.g., 3D Reconstruction, Object Detection"><br>
 
         <input type="submit" value="Submit">
       </form>
