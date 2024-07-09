@@ -34,6 +34,18 @@ section {
   margin-bottom: 20px;
 }
 
+#searchBar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#sortOptions {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
 #researchersList {
   margin-top: 20px;
 }
