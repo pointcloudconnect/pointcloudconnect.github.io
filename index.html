@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PointCloudConnect - Point Cloud Processing Platform</title>
-    <meta name="description" content="PointCloudConnect is a web platform designed for researchers in the field of point cloud processing. It allows users to browse and connect with other researchers, view their profiles and publications, and follow their updates.">
-    <meta name="keywords" content="point cloud, processing, research, platform, collaboration">
-    <!-- Add any necessary stylesheets here -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PointCloudConnect - Point Cloud Processing Platform</title>
+  <meta name="description" content="PointCloudConnect is a web platform designed for researchers in the field of point cloud processing.">
+  <meta name="keywords" content="point cloud, processing, research, platform, collaboration">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>PointCloudConnect</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#researchers">Researchers</a></li>
-                <li><a href="#submit">Submit Researcher Info</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>PointCloudConnect</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#researchers">Researchers</a></li>
+        <li><a href="#submit">Submit Researcher Info</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section id="about">
-            <h2>About PointCloudConnect</h2>
-            <p>"PointCloudConnect" is a web platform designed for researchers in the field of point cloud processing. It allows users to browse and connect with other researchers, view their profiles and publications, and follow their updates.</p>
-        </section>
+  <main>
+    <section id="about">
+      <h2>About PointCloudConnect</h2>
+      <p>"PointCloudConnect" is a web platform designed for researchers in the field of point cloud processing. It allows users to browse and connect with other researchers, view their profiles and publications, and follow their updates.</p>
+    </section>
 
-        <section id="researchers">
-            <h2>Researchers</h2>
-            <div id="researchersList"></div>
-        </section>
+    <section id="researchers">
+      <h2>Researchers</h2>
+      <div id="researchersList"></div>
+    </section>
 
-        <section id="submit">
-            <h2>Submit Researcher Information</h2>
-            <form action="submit-researcher-info" method="post" id="researcherForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br>
+    <section id="submit">
+      <h2>Submit Researcher Information</h2>
+      <form action="submit-researcher-info" method="post" id="researcherForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br>
+        <label for="affiliation">Affiliation:</label>
+        <input type="text" id="affiliation" name="affiliation"><br>
 
-                <label for="affiliation">Affiliation:</label>
-                <input type="text" id="affiliation" name="affiliation"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
 
-                <label for="publication">Publication:</label>
-                <textarea id="publication" name="publication"></textarea><br>
+        <label for="website">Website Address (Optional):</label>
+        <input type="url" id="website" name="website"><br>
 
-                <input type="submit" value="Submit">
-            </form>
-        </section>
-    </main>
+        <label for="expertise">Expertise (Multi-Select - Optional):</label>
+        <select id="expertise" name="expertise[]" multiple>
+          <option value="3D Reconstruction">3D Reconstruction</option>
+          <option value="Object Detection">Object Detection</option>
+          <option value="Segmentation">Segmentation</option>
+          <option value="Registration">Registration</option>
+          <option value="Other">Other</option>
+        </select><br>
 
-    <footer>
-        <p>&copy; 2024 PointCloudConnect. All rights reserved.</p>
-    </footer>
+        <input type="submit" value="Submit">
+      </form>
+    </section>
+  </main>
 
-    <!-- Add the JavaScript file for form validation and smooth scrolling -->
-    <script src="scripts.js"></script>
+  <footer>
+    <p>&copy; 2024 PointCloudConnect. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
