@@ -1,15 +1,29 @@
 [
   {
+    "name": "John Doe",
+    "affiliation": "University of Example",
+    "country": "United States",
+    "website": "https://www.example.com/johndoe"
+  },
+  {
+    "name": "Jane Smith",
+    "affiliation": "Research Institute of Testing",
+    "country": "Canada",
+    "website": "https://www.testinginstitute.com/janesmith"
+  }
+
+    {
     "name": "Kamyar O. Hamad",
     "affiliation": "CSU",
     "country": "China",
     "website": "https://kamyarothmanhamad.github.io"
   },
-  {
+
+   {
     "name": "David Ryckelynck",
     "affiliation": "Mines Paris PSL University",
     "country": "France",
     "website": "https://scholar.google.com/citations?user=t7-nU9YAAAAJ&hl=fr"
   }
-  // Add more researcher objects as needed
-]
+
+ 
